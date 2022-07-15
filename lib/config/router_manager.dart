@@ -62,7 +62,7 @@ class Router {
 
 /// Pop路由
 class PopRoute extends PopupRoute {
-  final Duration _duration = Duration(milliseconds: 300);
+  final Duration _duration = const Duration(milliseconds: 300);
   Widget child;
 
   PopRoute({@required this.child});

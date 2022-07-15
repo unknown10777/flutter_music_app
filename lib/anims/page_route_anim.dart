@@ -7,7 +7,7 @@ class NoAnimRouteBuilder extends PageRouteBuilder {
       : super(
             opaque: false,
             pageBuilder: (context, animation, secondaryAnimation) => page,
-            transitionDuration: Duration(milliseconds: 0),
+            transitionDuration: const Duration(milliseconds: 0),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) => child);
 }
@@ -18,7 +18,7 @@ class FadeRouteBuilder extends PageRouteBuilder {
   FadeRouteBuilder(this.page)
       : super(
             pageBuilder: (context, animation, secondaryAnimation) => page,
-            transitionDuration: Duration(milliseconds: 500),
+            transitionDuration: const Duration(milliseconds: 500),
             transitionsBuilder: (context, animation, secondaryAnimation,
                     child) =>
                 FadeTransition(
@@ -36,12 +36,13 @@ class SlideTopRouteBuilder extends PageRouteBuilder {
   SlideTopRouteBuilder(this.page)
       : super(
             pageBuilder: (context, animation, secondaryAnimation) => page,
-            transitionDuration: Duration(milliseconds: 800),
+            transitionDuration: const Duration(milliseconds: 800),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) =>
                     SlideTransition(
                       position: Tween<Offset>(
-                              begin: Offset(0.0, -1.0), end: Offset(0.0, 0.0))
+                              begin: const Offset(0.0, -1.0),
+                              end: const Offset(0.0, 0.0))
                           .animate(CurvedAnimation(
                               parent: animation, curve: Curves.fastOutSlowIn)),
                       child: child,
@@ -54,7 +55,7 @@ class SizeRoute extends PageRouteBuilder {
   SizeRoute(this.page)
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
-          transitionDuration: Duration(milliseconds: 300),
+          transitionDuration: const Duration(milliseconds: 300),
           transitionsBuilder: (context, animation, secondaryAnimation, child) =>
 //                Align(
 //                  child: SizeTransition(child: child, sizeFactor: animation),

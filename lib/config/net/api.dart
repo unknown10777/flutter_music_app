@@ -32,7 +32,7 @@ abstract class BaseHttp extends DioForNative {
     //         (X509Certificate cert, String host, int port) => true;
     //   };
     // }
-    interceptors..add(HeaderInterceptor());
+    interceptors.add(HeaderInterceptor());
     init();
   }
 

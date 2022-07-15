@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ImageHelper {
   static const String baseUrl = 'http://www.meetingplus.cn';
@@ -16,7 +15,7 @@ class ImageHelper {
   }
 
   static String wrapAssets(String url) {
-    return "assets/images/" + url;
+    return "assets/images/$url";
   }
 
   static Widget placeHolder({double width, double height}) {
@@ -50,6 +49,7 @@ class IconFonts {
 
   static const IconData pageEmpty = IconData(0xe63c, fontFamily: fontFamily);
   static const IconData pageError = IconData(0xe600, fontFamily: fontFamily);
-  static const IconData pageNetworkError = IconData(0xe678, fontFamily: fontFamily);
+  static const IconData pageNetworkError =
+      IconData(0xe678, fontFamily: fontFamily);
   static const IconData pageUnAuth = IconData(0xe65f, fontFamily: fontFamily);
 }

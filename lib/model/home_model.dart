@@ -16,11 +16,11 @@ class HomeModel extends ViewStateRefreshListModel {
   @override
   Future<List<Song>> loadData({int pageNum}) async {
     List<Future> futures = [];
-    Random r = new Random();
-    int _randomSongAlbum = r.nextInt(albumValueList.length);
-    int _randomSongForYou = r.nextInt(forYouValueList.length);
-    String inputAlbums = albumValueList[_randomSongAlbum];
-    String inputForYou = forYouValueList[_randomSongForYou];
+    Random r = Random();
+    int randomSongAlbum = r.nextInt(albumValueList.length);
+    int randomSongForYou = r.nextInt(forYouValueList.length);
+    String inputAlbums = albumValueList[randomSongAlbum];
+    String inputForYou = forYouValueList[randomSongForYou];
     futures.add(BaseRepository.fetchSongList(inputAlbums, pageNum));
     futures.add(BaseRepository.fetchSongList(inputForYou, pageNum));
 

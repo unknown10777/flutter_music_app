@@ -10,7 +10,7 @@ class Http extends BaseHttp {
   @override
   void init() {
     options.baseUrl = 'https://music.liuzhijin.cn';
-    interceptors..add(ApiInterceptor())
+    interceptors.add(ApiInterceptor())
         /*// cookie持久化 异步
       ..add(CookieManager(
           PersistCookieJar(dir: StorageManager.temporaryDirectory.path)))*/
@@ -21,9 +21,8 @@ class Http extends BaseHttp {
 class ApiInterceptor extends InterceptorsWrapper {
   @override
   onRequest(RequestOptions options) async {
-    debugPrint('---api-request--->url--> ${options.baseUrl}${options.path}' +
-        ' queryParameters: ${options.queryParameters}' +
-        ' data: ${options.data}');
+    debugPrint(
+        '---api-request--->url--> ${options.baseUrl}${options.path} queryParameters: ${options.queryParameters} data: ${options.data}');
     return options;
   }
 
@@ -47,6 +46,7 @@ class ApiInterceptor extends InterceptorsWrapper {
 }
 
 class ResponseData extends BaseResponseData {
+  @override
   bool get success => 200 == code;
 
   ResponseData.fromJson(Map<String, dynamic> json) {

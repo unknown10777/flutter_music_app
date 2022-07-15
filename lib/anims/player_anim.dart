@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_music_app/model/song_model.dart';
 import 'package:provider/provider.dart';
 
 class RotatePlayer extends AnimatedWidget {
-  RotatePlayer({Key key, Animation<double> animation})
+  const RotatePlayer({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
 
+  @override
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     SongModel songModel = Provider.of(context);

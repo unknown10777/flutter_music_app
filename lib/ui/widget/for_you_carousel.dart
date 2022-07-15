@@ -23,7 +23,7 @@ class _ForYouCarouselState extends State<ForYouCarousel> {
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
-            child: Container(
+            child: SizedBox(
                 width: 50,
                 height: 50,
                 child: Image(image: CachedNetworkImageProvider(data.pic))),

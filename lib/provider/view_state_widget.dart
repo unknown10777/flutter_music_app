@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_music_app/config/resource_manager.dart';
 import 'package:flutter_music_app/generated/i18n.dart';
-
 import 'view_state.dart';
 
 /// 加载中
@@ -35,7 +33,7 @@ class ViewStateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var titleStyle =
-        Theme.of(context).textTheme.subhead.copyWith(color: Colors.grey);
+        Theme.of(context).textTheme.subtitle1.copyWith(color: Colors.grey);
     var messageStyle = titleStyle.copyWith(
         color: titleStyle.color.withOpacity(0.7), fontSize: 14);
     return Column(
@@ -168,16 +166,16 @@ class ViewStateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(
+    return OutlinedButton(
       child: child ??
           Text(
             textData ?? S.of(context).viewStateButtonRetry,
-            style: TextStyle(wordSpacing: 5),
+            style: TextStyle(
+              wordSpacing: 5,
+              color: Colors.grey,
+            ),
           ),
-      textColor: Colors.grey,
-      splashColor: Theme.of(context).splashColor,
       onPressed: onPressed,
-      highlightedBorderColor: Theme.of(context).splashColor,
     );
   }
 }

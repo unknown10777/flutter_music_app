@@ -23,7 +23,7 @@ class SongModel with ChangeNotifier {
     notifyListeners();
   }
 
-  AudioPlayer _audioPlayer = AudioPlayer();
+  final AudioPlayer _audioPlayer = AudioPlayer();
   AudioPlayer get audioPlayer => _audioPlayer;
 
   List<Song> _songs;
@@ -89,7 +89,7 @@ class SongModel with ChangeNotifier {
         _currentSongIndex = 0;
       }
     } else {
-      Random r = new Random();
+      Random r = Random();
       _currentSongIndex = r.nextInt(_songs.length);
     }
     notifyListeners();
@@ -105,7 +105,7 @@ class SongModel with ChangeNotifier {
         _currentSongIndex = length - 1;
       }
     } else {
-      Random r = new Random();
+      Random r = Random();
       _currentSongIndex = r.nextInt(_songs.length);
     }
     notifyListeners();
@@ -148,7 +148,7 @@ class Song {
         pic = map["pic"];
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['type'] = type;
     data['link'] = link;
     data['songid'] = songid;

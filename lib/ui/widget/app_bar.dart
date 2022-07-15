@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppBarCarousel extends StatelessWidget {
+  const AppBarCarousel({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -9,7 +11,7 @@ class AppBarCarousel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               size: 25.0,
               color: Colors.grey,
@@ -19,7 +21,7 @@ class AppBarCarousel extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert,
               size: 25.0,
               color: Colors.grey,
